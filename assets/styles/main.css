@@ -1,0 +1,258 @@
+/* main.css */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+/* Custom styles for your website */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header styles */
+#header {
+    background-color: #333;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    color: white;
+    margin: 0 auto;
+}
+
+.left-menu button {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.center-menu ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.center-menu ul li {
+    margin-right: 20px;
+}
+
+.right-menu button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Banner styles */
+.banner {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#banner-vid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-content-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.banner-content-container h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.banner-content-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.banner-content-container button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Product container styles */
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.product-image {
+    background-color: #f2f2f2;
+    height: 400px; /* Adjust as needed */
+}
+
+.product-content {
+    flex: 2;
+}
+
+/* Tour item card styles */
+.card {
+    margin-bottom: 20px;
+}
+
+.tour-item__image {
+    position: relative;
+}
+
+.tour-item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tour-item__image-inner__icon-favorite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ff0000;
+}
+
+.tour-item__image-inner__bottom {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+}
+
+.tour-item__image-inner__bottom__category {
+    background-color: #4caf50;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.tour-item__image-inner__summary {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+}
+
+.tour-item__image-inner__summary__rating span {
+    background-color: #ffcc00;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.tour-item__image-inner__summary__review {
+    text-align: right;
+}
+
+/* Tour item card body styles */
+.tour-item__date,
+.tour-item__title,
+.tour-item__code,
+.tour-item__departure {
+    margin-bottom: 10px;
+}
+
+.tour-item__price,
+.tour-item__price__timer {
+    margin-top: 10px;
+}
+
+.tour-item__price__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tour-item__price--old,
+.tour-item__price--current {
+    display: flex;
+    align-items: center;
+}
+
+.tour-item__price--old__number {
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.tour-item__price--current__number {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.tour-item__price--current__discount {
+    background-color: #ff0000;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.tour-item__footer {
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+}
+
+.tour-item__footer__add-to-compare a {
+    color: #4caf50;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.tour-item__footer__available-seat {
+    color: #ff0000;
+}
+
+.container {
+	margin: 0 auto;
+}
+
+.card.tour-item {
+	width: 50%;
+	margin: 0 auto;
+}
+
+<!-- Thêm class "booking" vào form -->
+<form class="booking container mt-8">
+
+    <!-- Mỗi label và input/select đều được bao bọc trong một div với class "mb-6" để thêm khoảng cách giữa các trường -->
+    <div class="mb-6">
+        <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Họ tên:</label>
+        <input type="text" id="name" name="name" required
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+    </div>
+
+    <div class="mb-6">
+        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email:</label>
+        <input type="email" id="email" name="email" required
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+    </div>
+
+    <div class="mb-6">
+        <label for="destination" class="block text-sm font-semibold text-gray-700 mb-2">Điểm đến mong muốn:</label>
+        <select id="destination" name="destination" required
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+            <option value="destination1">Điểm đến 1</option>
+            <option value="destination2">Điểm đến 2</option>
+            <!-- Thêm các điểm đến khác vào đây -->
+        </select>
+    </div>
+
+    <div class="mb-6">
+        <label for="departure-date" class="block text-sm font-semibold text-gray-700 mb-2">Ngày khởi hành:</label>
+        <input type="date" id="departure-date" name="departure-date" required
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+    </div>
+
+    <!-- Thêm class "bg-blue-500 text-white py-2 px-4 rounded-md" cho button -->
+    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md">Đặt tour</button>
+</form>
