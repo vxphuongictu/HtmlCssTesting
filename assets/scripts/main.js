@@ -28,3 +28,40 @@ document.addEventListener("DOMContentLoaded", function () {
     lightbox.removeEventListener("click", closeLightbox);
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const commentForm = document.getElementById("comment-form");
+    const commentInput = document.getElementById("comment-input");
+    const commentsList = document.getElementById("comments-list");
+
+    // Load comments from localStorage when page loads
+    const savedComments = JSON.parse(localStorage.getItem("comments")) || [];
+    renderComments(savedComments);
+
+    // Event listener for submitting the comment form
+    commentForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const commentText = commentInput.value.trim();
+        if (commentText !== "") {
+            const comment = {
+                id: Date.now(),
+                text: commentText,
+                timestamp: new Date().toLocaleString()
+            };
+            savedComments.push(comment);
+            localStorage.setItem("comments", JSON.stringify(savedComments));
+            renderComments(savedComments);
+            commentInput.value = ""; // Clear input after submitting
+        }
+    });
+
+    // Function to render comments in the UI
+    function renderComments(comments) {
+        commentsList.innerHTML = "";
+        comments.forEach((comment) => {
+            const li = document.createElement("li");
+            li.innerHTML = `<strong>${comment.timestamp}</strong>: ${comment.text}`;
+            commentsList.appendChild(li);
+        });
+    }
+});
